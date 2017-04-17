@@ -9,6 +9,7 @@ feature "Broken helper", shell: true do
     teaspoon_test_app(<<-GEMFILE)
       gem 'teaspoon', path: '#{Teaspoon::DEV_PATH}'
       gem 'teaspoon-qunit', path: '#{Teaspoon::DEV_PATH}'
+      gem 'webdrivers', '~> 2.3'
     GEMFILE
     install_teaspoon("--coffee --version=#{version}")
     copy_broken_helper("test")

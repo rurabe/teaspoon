@@ -17,7 +17,8 @@ begin
   CodeClimate::TestReporter.configure do |config|
     config.path_prefix = File.expand_path('../../', __FILE__)
   end
-  CodeClimate::TestReporter.start
+  #CodeClimate::TestReporter.start
+  SimpleCov.start
 rescue LoadError
   puts "Not using codeclimate-test-reporter."
 end

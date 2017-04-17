@@ -2,11 +2,15 @@ sudo: false
 cache: bundler
 rvm:
   - 2.3.0
+addons:
+  firefox: 51.0.1
 gemfile:
   - gemfiles/rails_4.gemfile
   - gemfiles/rails_5.gemfile
 before_script:
   - sh -e /etc/init.d/xvfb start && npm install -g istanbul
+after_success:
+  - bundle exec codeclimate-test-reporter
 env:
   global:
     - TRAVIS=true

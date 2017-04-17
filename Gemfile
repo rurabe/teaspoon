@@ -14,10 +14,11 @@ group :development, :test do
   gem "teaspoon-qunit", path: "teaspoon-qunit"
 
   # gems that teaspoon can utilize
-  gem "selenium-webdriver"
+  gem "selenium-webdriver", "~> 3.3.0"
+  gem "webdrivers", "~> 2.3"
   gem "capybara-webkit"
 
   # io services
-  gem "codeclimate-test-reporter", group: :test, require: false
+  gem "codeclimate-test-reporter", "~> 1.0.0", group: :test, require: false
   gem "rubocop", require: false
 end
