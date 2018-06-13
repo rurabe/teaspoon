@@ -11,6 +11,8 @@ group :development, :test do
   gem "selenium-webdriver"
   gem "capybara-webkit"
   gem "simplecov", :require => false
+  gem "webdrivers", "~> 2.3"
+  gem "codeclimate-test-reporter", :group => :test, :require => false
   gem "rubocop", :require => false
 
   gemspec :name => "teaspoon-devkit", :path => "../"

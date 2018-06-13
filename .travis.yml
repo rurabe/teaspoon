@@ -4,20 +4,16 @@ rvm:
   - 2.3.6
 addons:
   firefox: "49"
+  - 2.3.0
+addons:
+  firefox: 51.0.1
 gemfile:
   - gemfiles/rails_4.gemfile
   - gemfiles/rails_5.gemfile
 before_script:
   - sh -e /etc/init.d/xvfb start && npm install -g istanbul
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckodriver-v0.19.1-linux64.tar.gz
-  - mkdir geckodriver
-  - tar -xzf geckodriver-v0.19.1-linux64.tar.gz -C geckodriver
-  - export PATH=$PATH:$PWD/geckodriver
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+after_success:
+  - bundle exec codeclimate-test-reporter
 env:
   global:
     - TRAVIS=true

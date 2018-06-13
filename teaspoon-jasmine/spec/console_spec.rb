@@ -46,6 +46,7 @@ feature "Running in the console", shell: true do
     teaspoon_test_app(<<-GEMFILE)
       gem 'teaspoon', path: '#{Teaspoon::DEV_PATH}'
       gem 'teaspoon-jasmine', path: '#{Teaspoon::DEV_PATH}'
+      gem 'webdrivers', '~> 2.3'
     GEMFILE
     install_teaspoon("--coffee --version=#{version}")
     copy_integration_files("spec", File.expand_path("../", __FILE__))

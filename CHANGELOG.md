@@ -1,5 +1,13 @@
 ### Unreleased
 
+#### Enhancements
+
+Support for (webpacker)[https://github.com/rails/webpacker/].
+
+```ruby
+suite.javascript_packs += ["your-custom-pack.js"]
+```
+
 #### Bug Fixes
 
 ### 1.1.5
